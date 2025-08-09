@@ -253,17 +253,24 @@
         ]
 
 
-        let cont = document.createElement("div")
-        data.forEach(element => {
-            cont.style.display = "grid"
-            cont.style.gridTemplateColumns = "1fr 1fr 1fr"
+        let title = document.createElement("h1")
+        title.innerHTML = "Products"
+        title.style.textAlign = "center"
+        title.style.textDecoration = "underline"
 
+        document.body.append(title)
+        let cont = document.createElement("div")
+        cont.style.display = "grid"
+        cont.style.gridTemplateColumns = "1fr 1fr 1fr 1fr"
+
+        data.forEach(element => {
             let child = document.createElement("div")
             child.style.padding = "1rem"
             child.style.margin = "1rem"
             child.style.border = "2px solid black"
-            child.style.fontSize="1.1rem"
-            child.style.borderRadius="5px"
+            // child.style.backgroundColor = "pink"
+            child.style.fontSize = "1.1rem"
+            child.style.borderRadius = "5px"
 
             let image = document.createElement("img")
             let id = document.createElement("p")
@@ -276,10 +283,11 @@
 
 
             image.src = element.image
-            image.style.margin="0 auto"
+            image.style.margin = "0 auto"
             image.style.display = "block"
             image.style.height = "250px"
             image.style.width = "200px"
+            // image.style.mixBlendMode = "multiply"
             id.innerHTML = `ID - ${element.id}`
             title.innerHTML = `Title - ${element.title}`
             price.innerHTML = `Price - ${element.price}`
